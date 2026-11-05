@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0b0c10;
+    background-image: 
+        linear-gradient(rgba(11, 12, 16, 0.85), rgba(11, 12, 16, 0.85)),
+        repeating-linear-gradient(0deg, transparent, transparent 2px, #1f2833 2px, #1f2833 4px);
+    color: #c5c6c7;
+    font-family: 'Rajdhani', sans-serif;
+    min-height: 100vh;
+}
+
+/* Cabecera / Menú principal */
+#menu {
+    width: 100%;
+    background: #12141a;
+    border-bottom: 2px solid #66fcf1;
+    padding: 20px 40px;
+    box-shadow: 0 0 15px rgba(102, 252, 241, 0.4);
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+#menu h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: #45a29e;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 8px rgba(69, 162, 158, 0.6);
+    margin: 0; 
+}
+
+.menu-enlaces {
+    display: flex;
+    gap: 15px; 
+    align-items: center;
+}
+
+.bienvenida-nav {
+    color: #66fcf1;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+#contenedor {
+    width: 95%;
+    max-width: 1200px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    align-items: start;
+}
+
+#contenedor > h2, 
+#contenedor > .derecha {
+    grid-column: 1 / -1;
+}
+
+#contenedor > h2 {
+    font-size: 2.5rem;
+    color: #66fcf1;
+    text-shadow: 0 0 10px rgba(102, 252, 241, 0.5), 0 0 20px rgba(102, 252, 241, 0.3);
+    margin-bottom: 20px;
+}
+
+.derecha {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+/* Tarjetas de videojuegos (clase .persona) */
+.persona {
+    background: #1f2833;
+    border: 1px solid #45a29e;
+    border-radius: 8px;
+    padding: 25px;
+    width: 100%;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.8), 0 5px 15px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.persona::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 4px;
+    background: #66fcf1;
+    box-shadow: 0 0 10px #66fcf1;
+}
+
+.persona:hover {
+    transform: translateY(-5px);
+    border-color: #66fcf1;
+    box-shadow: 0 0 20px rgba(102, 252, 241, 0.4);
+}
+
+.persona p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #c5c6c7;
+}
+
+.persona p strong {
+    font-family: 'Orbitron', sans-serif;
+    color: #ffffff;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+
+/* Botones estilo UI de juego */
+.boton {
+    background: transparent;
+    border: 2px solid #66fcf1;
+    border-radius: 4px;
+    color: #66fcf1;
+    padding: 8px 20px;
+    text-decoration: none;
+    font-weight: 700;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: all 0.2s ease;
+    display: inline-block;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 rgba(102, 252, 241, 0), 0 0 10px rgba(102, 252, 241, 0.2);
+}
+
+.boton:hover {
+    background: #66fcf1;
+    color: #0b0c10;
+    box-shadow: inset 0 0 10px rgba(255,255,255,0.5), 0 0 15px rgba(102, 252, 241, 0.6);
+}
+
+/* Formulario de registro y edición */
+.registro {
+    grid-column: 1 / -1;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    background: #12141a;
+    border: 1px solid #45a29e;
+    border-radius: 8px;
+    padding: 35px 30px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    position: relative;
+}
+
+.registro form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.registro h3 {
+    color: #66fcf1;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.registro label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    color: #45a29e;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: -5px;
+}
+
+/* AÑADIDOS LOS TIPOS DE INPUT QUE FALTABAN */
+.registro input[type="text"],
+.registro input[type="password"],
+.registro input[type="email"],
+.registro input[type="number"],
+.registro select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 4px;
+    border: 1px solid #1f2833;
+    background: #0b0c10;
+    color: #66fcf1;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.registro input[type="text"]:focus,
+.registro input[type="password"]:focus,
+.registro input[type="email"]:focus,
+.registro input[type="number"]:focus,
+.registro select:focus {
+    border-color: #66fcf1;
+    box-shadow: 0 0 10px rgba(102, 252, 241, 0.3);
+}
+
+.registro input[type="submit"] {
+    margin-top: 20px;
+    align-self: flex-start;
+}
+
+.imagen-juego {
+    width: 100%;
+    height: 320px;
+    object-fit: cover; 
+    object-position: top; /* CORREGIDA LA 'ç' QUE HABÍA AQUÍ */
+    border-radius: 4px;
+    margin-bottom: 15px;
+    border: 1px solid #1f2833;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+}
+
+/* =======================================
+   ESTILOS EXTRAÍDOS DE INDEX.PHP
+   ======================================= */
+
+.titulo-juego {
+    font-size: 1.5rem;
+    color: #ffffff;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.detalles-juego {
+    margin-top: 15px;
+    width: 100%;
+}
+
+.acciones-juego {
+    display: flex;
+    gap: 10px;
+    margin-top: auto; 
+    width: 100%;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+/* =======================================
+   ESTILOS PARA EL INPUT DE SUBIR ARCHIVO
+   ======================================= */
+
+/* Estilo para la caja general del input file */
+.registro input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px dashed #45a29e; /* Borde punteado para darle aspecto de "zona de subida" */
+    background: #0b0c10;
+    color: #c5c6c7;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.registro input[type="file"]:hover {
+    border-color: #66fcf1;
+    background: rgba(102, 252, 241, 0.05);
+}
+
+/* Estilo específico para el botón gris de "Seleccionar archivo" */
+.registro input[type="file"]::file-selector-button {
+    background: transparent;
+    border: 1px solid #66fcf1;
+    border-radius: 4px;
+    color: #66fcf1;
+    padding: 8px 15px;
+    margin-right: 15px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.registro input[type="file"]::file-selector-button:hover {
+    background: #66fcf1;
+    color: #0b0c10;
+    box-shadow: 0 0 10px rgba(102, 252, 241, 0.5);
+}
+/* =======================================
+   AÑADIDOS PARA LA VERSIÓN LOCAL (SIN PHP)
+   ======================================= */
+
+/* Las tarjetas se colocan directamente en la rejilla de #contenedor */
+.lista-juegos {
+    display: contents;
+}
+
+/* Mensajes de error en formularios (antes eran un "echo" en blanco) */
+.mensaje {
+    color: #ff6b6b;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-top: 10px;
+}
