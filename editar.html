@@ -1,20 +1,27 @@
 <!DOCTYPE html>
+<!-- Página de editar videojuego del catálogo de videojuegos -->
 <html lang="es">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="estilos/estilos.css">
+	<meta charset="utf-8"> <!-- para que se vean bien las tildes y la ñ -->
+	<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- necesario para que la web se adapte al móvil -->
+	<link rel="stylesheet" type="text/css" href="estilos/estilos.css"> <!-- aquí cargo mis estilos -->
 	<title>Catálogo de Videojuegos</title>
 </head>
+<!-- data-pagina le dice a app.js en qué página estoy para que arranque la parte correcta -->
 <body data-pagina="editar">
+    <!-- El menú de arriba está vacío: lo rellena app.js con el título, hamburguesa y botones -->
     <div id="menu" class="menu-nav"></div>
 
+    <!-- Contenedor principal: aquí va el contenido de la página -->
     <div id="contenedor">
+	<!-- Caja del formulario. app.js lo rellena con los datos del juego que quiero editar -->
 	<div class="registro">
 	<form id="form-editar">
+	    <!-- Título del juego -->
 	    <label>Título:</label>
 	    <input type="text" name="titulo" required>
 
+	    <!-- Plataforma -->
 	    <label>Plataforma:</label>
 	    <select name="plataforma" required>
             <option value="PC">PC</option>
@@ -24,6 +31,7 @@
             <option value="Sega Mega Drive">Sega Mega Drive</option>
         </select>
 
+        <!-- Género -->
         <label>Género:</label>
 	    <select name="genero" required>
             <option value="Acción">Acción</option>
@@ -32,17 +40,22 @@
             <option value="Deportes">Deportes</option>
         </select>
 
+        <!-- Carátula: aquí NO es obligatoria; si la dejo vacía se queda la que ya tiene -->
         <label>Nueva Carátula (dejar en blanco para mantener la actual):</label>
         <input type="file" name="imagen" accept="image/*">
 
+        <!-- Año de lanzamiento -->
         <label>Año de lanzamiento:</label>
 	    <input type="number" name="anio_lanzamiento" required>
 
+	    <!-- Mensajes de error -->
 	    <p class="mensaje" id="mensaje"></p>
+	    <!-- Botón para guardar los cambios -->
 	    <input class="boton" type="submit" value="Actualizar">
 	</form>
 	</div>
     </div>
+    <!-- Cargo el JavaScript al final, cuando todo el HTML ya existe -->
     <script src="js/app.js"></script>
 </body>
 </html>

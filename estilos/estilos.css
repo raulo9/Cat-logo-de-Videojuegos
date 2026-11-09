@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@500;700&display=swap');
 
+/* cargo las letras que utilizo en la página */
+
+/* quito los márgenes y espacios iniciales y ajusto el tamaño de los elementos */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* preparo el fondo, el color del texto y la letra general de la página */
 body {
     background-color: #0b0c10;
     background-image: 
@@ -16,7 +20,7 @@ body {
     min-height: 100vh;
 }
 
-/* Cabecera / Menú principal */
+/* doy formato a la cabecera y al menú principal */
 #menu {
     width: 100%;
     background: #12141a;
@@ -28,6 +32,7 @@ body {
     align-items: center; 
 }
 
+/* ajusto el título del menú y le doy el estilo de la página */
 #menu h2 {
     font-family: 'Orbitron', sans-serif;
     color: #45a29e;
@@ -37,12 +42,14 @@ body {
     margin: 0; 
 }
 
+/* coloco los enlaces del menú en una fila */
 .menu-enlaces {
     display: flex;
     gap: 15px; 
     align-items: center;
 }
 
+/* doy formato al mensaje de bienvenida */
 .bienvenida-nav {
     color: #66fcf1;
     font-family: 'Orbitron', sans-serif;
@@ -50,6 +57,7 @@ body {
     letter-spacing: 1px;
 }
 
+/* centro el contenido y lo organizo en tres columnas */
 #contenedor {
     width: 95%;
     max-width: 1200px;
@@ -60,11 +68,13 @@ body {
     align-items: start;
 }
 
+/* hago que el título y el bloque de la derecha ocupen todo el ancho */
 #contenedor > h2, 
 #contenedor > .derecha {
     grid-column: 1 / -1;
 }
 
+/* doy tamaño y color al título principal del contenido */
 #contenedor > h2 {
     font-size: 2.5rem;
     color: #66fcf1;
@@ -72,12 +82,13 @@ body {
     margin-bottom: 20px;
 }
 
+/* alineo a la derecha el bloque que contiene el botón */
 .derecha {
     text-align: right;
     margin-bottom: 20px;
 }
 
-/* Tarjetas de videojuegos (clase .persona) */
+/* doy formato a las tarjetas donde aparece cada videojuego */
 .persona {
     background: #1f2833;
     border: 1px solid #45a29e;
@@ -93,6 +104,7 @@ body {
     overflow: hidden;
 }
 
+/* añado una línea brillante en la parte superior de cada tarjeta */
 .persona::before {
     content: '';
     position: absolute;
@@ -101,18 +113,21 @@ body {
     box-shadow: 0 0 10px #66fcf1;
 }
 
+/* levanto la tarjeta y aumento su brillo al pasar el ratón */
 .persona:hover {
     transform: translateY(-5px);
     border-color: #66fcf1;
     box-shadow: 0 0 20px rgba(102, 252, 241, 0.4);
 }
 
+/* ajusto el tamaño y la separación de los textos de cada tarjeta */
 .persona p {
     font-size: 1.2rem;
     margin-bottom: 10px;
     color: #c5c6c7;
 }
 
+/* resalto los datos principales de cada tarjeta */
 .persona p strong {
     font-family: 'Orbitron', sans-serif;
     color: #ffffff;
@@ -120,7 +135,7 @@ body {
     letter-spacing: 1px;
 }
 
-/* Botones estilo UI de juego */
+/* doy formato a los botones para que sigan el estilo de la página */
 .boton {
     background: transparent;
     border: 2px solid #66fcf1;
@@ -139,13 +154,14 @@ body {
     box-shadow: inset 0 0 0 rgba(102, 252, 241, 0), 0 0 10px rgba(102, 252, 241, 0.2);
 }
 
+/* cambio el aspecto de los botones cuando paso el ratón */
 .boton:hover {
     background: #66fcf1;
     color: #0b0c10;
     box-shadow: inset 0 0 10px rgba(255,255,255,0.5), 0 0 15px rgba(102, 252, 241, 0.6);
 }
 
-/* Formulario de registro y edición */
+/* preparo el formulario para registrar o editar videojuegos */
 .registro {
     grid-column: 1 / -1;
     max-width: 500px;
@@ -159,12 +175,14 @@ body {
     position: relative;
 }
 
+/* coloco los campos del formulario uno debajo de otro */
 .registro form {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
+/* centro el título del formulario */
 .registro h3 {
     color: #66fcf1;
     text-align: center;
@@ -172,6 +190,7 @@ body {
     font-family: 'Orbitron', sans-serif;
 }
 
+/* doy formato a los nombres de los campos */
 .registro label {
     font-family: 'Orbitron', sans-serif;
     font-size: 0.9rem;
@@ -181,7 +200,7 @@ body {
     margin-bottom: -5px;
 }
 
-/* AÑADIDOS LOS TIPOS DE INPUT QUE FALTABAN */
+/* ajusto los campos donde se introducen los datos */
 .registro input[type="text"],
 .registro input[type="password"],
 .registro input[type="email"],
@@ -200,6 +219,7 @@ body {
     transition: all 0.3s ease;
 }
 
+/* resalto el campo cuando se selecciona para escribir */
 .registro input[type="text"]:focus,
 .registro input[type="password"]:focus,
 .registro input[type="email"]:focus,
@@ -209,26 +229,25 @@ body {
     box-shadow: 0 0 10px rgba(102, 252, 241, 0.3);
 }
 
+/* separo el botón de enviar del resto de campos */
 .registro input[type="submit"] {
     margin-top: 20px;
     align-self: flex-start;
 }
 
+/* ajusto el tamaño y la forma de las imágenes de los videojuegos */
 .imagen-juego {
     width: 100%;
     height: 320px;
     object-fit: cover; 
-    object-position: top; /* CORREGIDA LA 'ç' QUE HABÍA AQUÍ */
+    object-position: top;
     border-radius: 4px;
     margin-bottom: 15px;
     border: 1px solid #1f2833;
     box-shadow: 0 4px 8px rgba(0,0,0,0.6);
 }
 
-/* =======================================
-   ESTILOS EXTRAÍDOS DE INDEX.PHP
-   ======================================= */
-
+/* doy formato al título de cada videojuego */
 .titulo-juego {
     font-size: 1.5rem;
     color: #ffffff;
@@ -237,11 +256,13 @@ body {
     margin-bottom: 10px;
 }
 
+/* separo y organizo la información de cada videojuego */
 .detalles-juego {
     margin-top: 15px;
     width: 100%;
 }
 
+/* coloco los botones de cada tarjeta en una misma fila */
 .acciones-juego {
     display: flex;
     gap: 10px;
@@ -251,16 +272,12 @@ body {
     padding-top: 20px;
 }
 
-/* =======================================
-   ESTILOS PARA EL INPUT DE SUBIR ARCHIVO
-   ======================================= */
-
-/* Estilo para la caja general del input file */
+/* doy formato al campo para seleccionar una imagen o un archivo */
 .registro input[type="file"] {
     width: 100%;
     padding: 10px;
     border-radius: 4px;
-    border: 1px dashed #45a29e; /* Borde punteado para darle aspecto de "zona de subida" */
+    border: 1px dashed #45a29e;
     background: #0b0c10;
     color: #c5c6c7;
     font-family: 'Rajdhani', sans-serif;
@@ -270,12 +287,13 @@ body {
     cursor: pointer;
 }
 
+/* cambio el aspecto del campo de archivo cuando paso el ratón */
 .registro input[type="file"]:hover {
     border-color: #66fcf1;
     background: rgba(102, 252, 241, 0.05);
 }
 
-/* Estilo específico para el botón gris de "Seleccionar archivo" */
+/* doy estilo al botón que permite elegir el archivo */
 .registro input[type="file"]::file-selector-button {
     background: transparent;
     border: 1px solid #66fcf1;
@@ -290,24 +308,254 @@ body {
     transition: all 0.3s ease;
 }
 
+/* cambio el aspecto del botón para elegir archivo al pasar el ratón */
 .registro input[type="file"]::file-selector-button:hover {
     background: #66fcf1;
     color: #0b0c10;
     box-shadow: 0 0 10px rgba(102, 252, 241, 0.5);
 }
-/* =======================================
-   AÑADIDOS PARA LA VERSIÓN LOCAL (SIN PHP)
-   ======================================= */
 
-/* Las tarjetas se colocan directamente en la rejilla de #contenedor */
+/* hago que las tarjetas de juegos se coloquen directamente en la cuadrícula */
 .lista-juegos {
     display: contents;
 }
 
-/* Mensajes de error en formularios (antes eran un "echo" en blanco) */
+/* doy formato a los mensajes que aparecen cuando hay un error */
 .mensaje {
     color: #ff6b6b;
     font-size: 1.1rem;
     text-align: center;
     margin-top: 10px;
+}
+
+/* evito que las imágenes se salgan del espacio disponible */
+img { max-width: 100%; }
+
+/* oculto el botón del menú móvil cuando se ve la página en ordenador */
+.hamburguesa {
+    display: none;
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    background: transparent;
+    border: 2px solid #66fcf1;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+    box-shadow: 0 0 10px rgba(102, 252, 241, 0.3);
+    transition: all 0.2s ease;
+}
+
+/* preparo las tres líneas que forman el botón del menú */
+.hamburguesa span {
+    position: absolute;
+    left: 10px;
+    width: 22px;
+    height: 2px;
+    background: #66fcf1;
+    box-shadow: 0 0 6px #66fcf1;
+    transition: transform 0.3s ease, opacity 0.2s ease, top 0.3s ease;
+}
+
+/* coloco cada línea a una altura diferente */
+.hamburguesa span:nth-child(1) { top: 12px; }
+.hamburguesa span:nth-child(2) { top: 20px; }
+.hamburguesa span:nth-child(3) { top: 28px; }
+
+/* hago que el botón brille cuando se pasa el ratón o se selecciona */
+.hamburguesa:hover,
+.hamburguesa:focus-visible {
+    background: rgba(102, 252, 241, 0.12);
+    box-shadow: 0 0 15px rgba(102, 252, 241, 0.6);
+    outline: none;
+}
+
+/* convierto las tres líneas en una x cuando el menú está abierto */
+#menu.abierto .hamburguesa span:nth-child(1) { top: 20px; transform: rotate(45deg); }
+#menu.abierto .hamburguesa span:nth-child(2) { opacity: 0; }
+#menu.abierto .hamburguesa span:nth-child(3) { top: 20px; transform: rotate(-45deg); }
+
+/* adapto la distribución de la página para pantallas de tablet */
+@media (max-width: 1024px) {
+    /* paso las tarjetas de tres columnas a dos */
+    #contenedor {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    /* reduzco el espacio interior del menú */
+    #menu {
+        padding: 18px 28px;
+    }
+
+    /* reduzco un poco la altura de las imágenes */
+    .imagen-juego {
+        height: 280px;
+    }
+}
+
+/* preparo el menú desplegable para tablet y móvil */
+@media (max-width: 1024px) {
+    /* dejo el menú arriba mientras se desplaza la página */
+    #menu {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        padding: 12px 22px;
+        gap: 12px;
+    }
+
+    /* ajusto el tamaño del título según el ancho de la pantalla */
+    #menu h2 {
+        font-size: clamp(0.95rem, 3.2vw, 1.4rem);
+        letter-spacing: 1px;
+        line-height: 1.2;
+    }
+
+    /* muestro el botón para abrir el menú */
+    .hamburguesa {
+        display: block;
+    }
+
+    /* preparo los enlaces como un panel que se despliega debajo de la cabecera */
+    .menu-enlaces {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        background: rgba(18, 20, 26, 0.98);
+        border-bottom: 2px solid #66fcf1;
+        box-shadow: 0 12px 25px rgba(102, 252, 241, 0.25);
+        max-height: 0;
+        padding: 0 22px;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transition: max-height 0.35s ease, padding 0.35s ease, opacity 0.25s ease, visibility 0.35s;
+    }
+
+    /* muestro el panel de enlaces cuando se abre el menú */
+    #menu.abierto .menu-enlaces {
+        max-height: 320px;
+        padding: 20px 22px;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* centro los botones y facilito que se puedan pulsar */
+    .menu-enlaces .boton {
+        text-align: center;
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+
+    /* centro el mensaje de bienvenida dentro del menú */
+    .bienvenida-nav {
+        text-align: center;
+        font-size: 1rem;
+        padding-bottom: 4px;
+        border-bottom: 1px dashed rgba(102, 252, 241, 0.3);
+    }
+}
+
+/* ajusto los espacios para móviles y tablets pequeñas */
+@media (max-width: 768px) {
+    /* reduzco los márgenes laterales de la cabecera */
+    #menu {
+        padding: 12px 18px;
+    }
+
+    /* adapto el tamaño del título */
+    #menu h2 {
+        font-size: clamp(0.95rem, 4.6vw, 1.3rem);
+    }
+
+    /* acerco el contenido a la parte superior */
+    #contenedor {
+        margin: 24px auto;
+    }
+
+    /* centro el botón de añadir un videojuego */
+    .derecha {
+        text-align: center;
+    }
+
+    /* hago que el botón ocupe todo el ancho disponible */
+    .derecha .boton {
+        display: block;
+        text-align: center;
+        padding: 12px 20px;
+    }
+
+    /* reduzco el espacio interior del formulario */
+    .registro {
+        padding: 28px 20px;
+    }
+}
+
+/* adapto la página a móviles con una sola columna */
+@media (max-width: 600px) {
+    /* dejo una tarjeta en cada fila */
+    #contenedor {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    /* ajusto la altura de las imágenes al ancho del móvil */
+    .imagen-juego {
+        height: min(360px, 90vw);
+    }
+
+    /* reduzco el espacio interior de las tarjetas */
+    .persona {
+        padding: 20px;
+    }
+
+    /* reduzco el tamaño del título de cada videojuego */
+    .titulo-juego {
+        font-size: 1.3rem;
+    }
+
+    /* ajusto el tamaño de los textos de las tarjetas */
+    .persona p {
+        font-size: 1.1rem;
+    }
+
+    /* permito que los botones pasen a otra línea si no caben */
+    .acciones-juego {
+        flex-wrap: wrap;
+    }
+
+    /* reparto el espacio entre los botones de cada tarjeta */
+    .acciones-juego .boton {
+        flex: 1 1 120px;
+        text-align: center;
+        padding: 12px 14px;
+    }
+
+    /* coloco el botón para elegir archivo encima del nombre */
+    .registro input[type="file"]::file-selector-button {
+        display: block;
+        margin: 0 0 10px 0;
+    }
+}
+
+/* quito el movimiento de las tarjetas en dispositivos que se manejan con el dedo */
+@media (hover: none) {
+    .persona:hover {
+        transform: none;
+    }
+}
+
+/* desactivo las transiciones si está activada la opción de reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+    .menu-enlaces,
+    .hamburguesa span,
+    .persona {
+        transition: none;
+    }
 }

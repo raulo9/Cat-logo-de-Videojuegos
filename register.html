@@ -1,33 +1,43 @@
 <!DOCTYPE html>
+<!-- Página de registro de usuarios del catálogo de videojuegos -->
 <html lang="es">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="estilos/estilos.css">
+	<meta charset="utf-8"> <!-- para que se vean bien las tildes y la ñ -->
+	<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- necesario para que la web se adapte al móvil -->
+	<link rel="stylesheet" type="text/css" href="estilos/estilos.css"> <!-- aquí cargo mis estilos -->
 	<title>Catálogo de Videojuegos</title>
 </head>
+<!-- data-pagina le dice a app.js en qué página estoy para que arranque la parte correcta -->
 <body data-pagina="register">
+    <!-- El menú de arriba está vacío: lo rellena app.js con el título, hamburguesa y botones -->
     <div id="menu" class="menu-nav"></div>
 
+    <!-- Contenedor principal: aquí va el contenido de la página -->
     <div id="contenedor">
+<!-- Caja del formulario de registro -->
 <div class="registro">
     <h3>Crear Cuenta</h3>
 
     <form id="form-registro">
+        <!-- Nombre que se mostrará en el menú -->
         <label>Nombre:</label>
         <input type="text" name="nombre" placeholder="Tu nombre real" required>
 
+        <!-- Correo: es con lo que luego inicio sesión -->
         <label>Correo electrónico:</label>
         <input type="email" name="correo" placeholder="ejemplo@correo.com" required>
 
+        <!-- Contraseña: app.js la guarda convertida en hash, no en texto normal -->
         <label>Contraseña:</label>
         <input type="password" name="password" placeholder="Escribe una contraseña" required>
 
+        <!-- Aquí app.js escribe el error si el correo ya está registrado -->
         <p class="mensaje" id="mensaje"></p>
         <input class="boton" type="submit" value="Registrarse">
     </form>
 </div>
     </div>
+    <!-- Cargo el JavaScript al final, cuando todo el HTML ya existe -->
     <script src="js/app.js"></script>
 </body>
 </html>

@@ -1,30 +1,39 @@
 <!DOCTYPE html>
+<!-- Página de inicio de sesión del catálogo de videojuegos -->
 <html lang="es">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="estilos/estilos.css">
+	<meta charset="utf-8"> <!-- para que se vean bien las tildes y la ñ -->
+	<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- necesario para que la web se adapte al móvil (responsive) -->
+	<link rel="stylesheet" type="text/css" href="estilos/estilos.css"> <!-- aquí cargo mis estilos -->
 	<title>Catálogo de Videojuegos</title>
 </head>
+<!-- data-pagina le dice a app.js en qué página estoy para que arranque la parte correcta -->
 <body data-pagina="login">
+    <!-- El menú de arriba está vacío: lo rellena app.js con el título, hamburguesa y botones -->
     <div id="menu" class="menu-nav"></div>
 
+    <!-- Contenedor principal: aquí va el contenido de la página -->
     <div id="contenedor">
+<!-- Caja del formulario de login -->
 <div class="registro">
     <h3>Iniciar Sesión</h3>
 
     <form id="form-login">
+        <!-- El correo con el que me registré el type="email" comprueba que tenga formato de correo -->
         <label>Correo electrónico:</label>
         <input type="email" name="correo" placeholder="Tu correo" required>
 
+        <!-- La contraseña el type="password" oculta lo que escribo -->
         <label>Contraseña:</label>
         <input type="password" name="password" placeholder="Tu contraseña" required>
 
+        <!-- Aquí app.js escribe "Correo o contraseña incorrectos" si falla -->
         <p class="mensaje" id="mensaje"></p>
         <input class="boton" type="submit" value="Entrar">
     </form>
 </div>
     </div>
+    <!-- Cargo el JavaScript al final, cuando todo el HTML ya existe -->
     <script src="js/app.js"></script>
 </body>
 </html>

@@ -1,18 +1,25 @@
 <!DOCTYPE html>
+<!-- Página de inicio del catálogo de videojuegos -->
 <html lang="es">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="estilos/estilos.css">
+	<meta charset="utf-8"> <!-- para que se vean bien las tildes y la ñ -->
+	<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- necesario para que la web se adapte al móvil -->
+	<link rel="stylesheet" type="text/css" href="estilos/estilos.css"> <!-- aquí cargo mis estilos -->
 	<title>Catálogo de Videojuegos</title>
 </head>
+<!-- data-pagina le dice a app.js en qué página estoy para que arranque la parte correcta -->
 <body data-pagina="index">
+    <!-- El menú de arriba está vacío: lo rellena app.js con el título, hamburguesa y botones -->
     <div id="menu" class="menu-nav"></div>
 
+    <!-- Contenedor principal: aquí va el contenido de la página -->
     <div id="contenedor">
+<!-- Botón para ir a la página de añadir un videojuego nuevo -->
 <p class="derecha"><a class="boton" href="nuevo.html">Nuevo</a></p>
+<!-- Aquí app.js dibuja una tarjeta por cada videojuego -->
 <div id="lista" class="lista-juegos"></div>
     </div>
+    <!-- Cargo el JavaScript al final, cuando todo el HTML ya existe -->
     <script src="js/app.js"></script>
 </body>
 </html>
